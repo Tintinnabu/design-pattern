@@ -25,11 +25,5 @@ public class ProxyInvocationHandler implements InvocationHandler {
         return null;
     }
 
-    public static void main(String[] args) {
-        System.getProperties().setProperty("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
-        HelloInterface hello = new Hello();
-        InvocationHandler handler = new ProxyInvocationHandler(hello);
-        HelloInterface proxyHello = (HelloInterface) Proxy.newProxyInstance(hello.getClass().getClassLoader(), hello.getClass().getInterfaces(), handler);
-        proxyHello.sayHello();
-    }
+
 }
